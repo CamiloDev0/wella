@@ -7,7 +7,6 @@ import './App.css'
 
 function App() {
   const [ screenACtive, setScreenActive ] = useState( 1 )
-  const [ promptPrev, setPromptPrev ] = useState( "realistic photo, modernity, red, beauty, runway model" )
   const [ lang, setLang ] = useState( 'en-EN' )
   const [ placeholder, setPlaceholder ] = useState( 'Speak clearly and forcefully into the microphone. When you are ready, say "Finish" and we will continue.' )
   const [ placeholderSign, setPlaceholderSign ] = useState( 'Please provide your name so we can sign your art, and say "Ok" to download your art' )
@@ -15,13 +14,14 @@ function App() {
   const [ sign, setSign ] = useState( '' )
   const [ imageKey, setImageKey ] = useState( '' )
   const [ image, setImage ] = useState()
-  const [ finalImage, setFinalImage ] = useState( '' )
+  //const [ finalImage, setFinalImage ] = useState( '' )
   const [ message, setMessage ] = useState('')
 
   const showControls = false
   const isMuted = true
   const mapObj: { [key: string]: string } = { ok: "", Ok: "", okay: "", Okay: "" }
   const mapText: { [key: string]: string } = { terminar: "", Terminar: "", finish: "", Finish: "", fim: "", Fim: "" }
+  const promptPrev = "realistic photo, modernity, red, beauty, runway model"
   const token = "cd566c9c-b287-4b7b-9df9-65e7accd692f"
   const headers = { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
 
@@ -142,7 +142,7 @@ function App() {
         axios({ method: "post", url: 'http://localhost:8080', headers:_heads, data })
         .then((res) => console.log("SAVE IMAGE WS PHP ===> " + res) )
         .catch((error) => console.log("REQUEST IMAGE SAVE ERROR ====> " + error))
-        setFinalImage( _image )
+        //setFinalImage( _image )
       }else
         console.error('Element not found')
     }
