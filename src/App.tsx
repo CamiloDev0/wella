@@ -18,7 +18,7 @@ function App() {
   const [ message, setMessage ] = useState('')
 
   const showControls = false
-  const isMuted = true
+  const isMuted = false
   const mapObj: { [key: string]: string } = { ok: "", Ok: "", okay: "", Okay: "" }
   const mapText: { [key: string]: string } = { terminar: "", Terminar: "", finish: "", Finish: "", fim: "", Fim: "" }
   const promptPrev = "realistic photo, modernity, red, beauty, runway model"
@@ -139,7 +139,7 @@ function App() {
         // console.log( "Encode URL Canvas ====> " + encodedDataURL )
         const _heads = {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
         const data = JSON.stringify({ image: _image, id: imageKey })
-        axios({ method: "post", url: 'http://localhost:8080', headers:_heads, data })
+        axios({ method: "post", url: 'https://mocionws.info/', headers:_heads, data })
         .then((res) => console.log("SAVE IMAGE WS PHP ===> " + res) )
         .catch((error) => console.log("REQUEST IMAGE SAVE ERROR ====> " + error))
         //setFinalImage( _image )
