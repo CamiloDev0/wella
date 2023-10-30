@@ -180,7 +180,7 @@ function App() {
           setMessage( "GET IMAGE RESPONSE FROM REQUEST API ===> " + response )
           let pos = getRandom( 1, 3 )
           setImage( response.data.response.imageUrls[ pos ] )
-          setTimeout( () => setScreenActive( 6 ), 20000 )
+          setTimeout( () => setScreenActive( 6 ), 10000 )
         }else
           getImage( MID )
       })
@@ -225,11 +225,11 @@ function App() {
           break;
         case 2:
           stopListeningContinuosly()
-          setTimeout( () => setScreenActive( 3 ), 1000 )
+          setTimeout( () => setScreenActive( 3 ), 16000 )
           setMessage( `On screen ( ${ screenACtive } ) - Use ${lang} lang - attempt to finish video temp in 16 sec.` )
           break;
         case 3:
-          setTimeout( () => setScreenActive( 4 ), 2000 )
+          setTimeout( () => setScreenActive( 4 ), 26000 )
           setMessage( `On screen ( ${ screenACtive } ) - Use ${lang} lang - explain how works A.I.` )
           break;
         case 4:
