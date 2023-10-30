@@ -82,7 +82,7 @@ video {
   background-image: url("/back.jpeg");
 }
 
-.screen-four, .image{
+.screen-four, .image, .screen-seven{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,9 +190,7 @@ video {
 
 .qr-container{
   height: 100%;
-  margin: 0px auto;
-  max-width: 200px;
+  max-width: 250px;
   width: 100%;
-  margin-top: 23.5%;
-  margin-left: 53.3%;
+  margin: 1% auto 0 43%;
 }
