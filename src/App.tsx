@@ -329,7 +329,7 @@ function App() {
             <div className='qr-container'>
                 <QRCode
                 size={256}
-                bgColor="rgba(0,0,0,0)"
+                bgColor="rgba(255,255,255,0.7)"
                 style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                 value={`http://192.168.1.9:5173/download.html?url=algo&sign=${ sign }`}
                 viewBox={`0 0 256 256`}
