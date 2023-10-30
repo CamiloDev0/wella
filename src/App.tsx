@@ -117,7 +117,7 @@ function App() {
   const processPrompt = async ( prompt:any ) => {
     let _clearText = clearText( prompt )
     stopListeningContinuosly()
-    if( lang !== 'en_EN' ){
+    if( lang !== 'en-EN' ){
       let _textTranslate = await translationTranscript( _clearText )
       if( _textTranslate.translatedText ){
         imagine( _textTranslate.translatedText )
