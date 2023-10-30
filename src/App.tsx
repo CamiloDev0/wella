@@ -116,14 +116,18 @@ function App() {
 
   const processPrompt = async ( prompt:any ) => {
     let _clearText = clearText( prompt )
-    let _textTranslate = await translationTranscript( _clearText )
-    if( _textTranslate.translatedText ){
-      let promptTranslate = lang !== 'en-EN' ? _textTranslate.translatedText : _clearText
-      imagine( promptTranslate )
-      stopListeningContinuosly()
+    stopListeningContinuosly()
+    if( lang !== 'en_EN' ){
+      let _textTranslate = await translationTranscript( _clearText )
+      if( _textTranslate.translatedText ){
+        imagine( _textTranslate.translatedText )
+        setScreenActive( 5 )
+      }else
+        processPrompt( prompt )
+    }else{
+      imagine( prompt )
       setScreenActive( 5 )
-    }else
-      processPrompt( prompt )
+    }
   }
 
   const processSign = ( _sign:any ) => {
@@ -134,10 +138,13 @@ function App() {
       if ( element instanceof HTMLElement ) {
         const canvas = await html2canvas(element, {allowTaint: true, useCORS: true, logging: true})
         const _image = canvas.toDataURL("image/png", 1.0)
-        console.log( "URL Canvas ====> " + _image )
+        //console.log( "URL Canvas ====> " + _image )
         // const encodedDataURL = encodeURIComponent( _image )
         // console.log( "Encode URL Canvas ====> " + encodedDataURL )
-        const _heads = {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
+        const _heads = {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        }
         const data = JSON.stringify({ image: _image, id: imageKey })
         axios({ method: "post", url: 'https://mocionws.info/', headers:_heads, data })
         .then((res) => console.log("SAVE IMAGE WS PHP ===> " + res) )
