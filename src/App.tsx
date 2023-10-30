@@ -144,7 +144,7 @@ function App() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`
         }
-        const data = JSON.stringify({ image: _image, id: imageKey })
+        const data = JSON.stringify({ image: _image, id: imageKey, folder:"wella" })
         axios({ method: "post", url: 'https://mocionws.info/', headers:_heads, data })
         .then((res) => console.log("SAVE IMAGE WS PHP ===> " + res) )
         .catch((error) => console.log("REQUEST IMAGE SAVE ERROR ====> " + error))
