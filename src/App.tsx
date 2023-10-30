@@ -229,7 +229,7 @@ function App() {
           setMessage( `On screen ( ${ screenACtive } ) - Use ${lang} lang - attempt to finish video temp in 16 sec.` )
           break;
         case 3:
-          setTimeout( () => setScreenActive( 4 ), 26000 )
+          setTimeout( () => setScreenActive( 4 ), 18000 )
           setMessage( `On screen ( ${ screenACtive } ) - Use ${lang} lang - explain how works A.I.` )
           break;
         case 4:
