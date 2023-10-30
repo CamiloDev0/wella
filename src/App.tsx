@@ -14,7 +14,6 @@ function App() {
   const [ sign, setSign ] = useState( '' )
   const [ imageKey, setImageKey ] = useState( '' )
   const [ image, setImage ] = useState()
-  //const [ finalImage, setFinalImage ] = useState( '' )
   const [ message, setMessage ] = useState('')
 
   const showControls = false
@@ -329,9 +328,9 @@ function App() {
             <div className='qr-container'>
                 <QRCode
                 size={256}
-                bgColor="rgba(255,255,255,0.7)"
+                bgColor="rgba(255,255,255,0.4)"
                 style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                value={`http://192.168.1.9:5173/download.html?url=algo&sign=${ sign }`}
+                value={`https://mocionws.info/download.html?url=https://mocionws.info/wella/${ imageKey }.png&name=Wella Beauty Festival - ${ sign }`}
                 viewBox={`0 0 256 256`}
                 />
             </div>

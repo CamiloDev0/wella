@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="/fav-icon-v2.png" rel="shortcut icon">
+    <link href="/wella/fav-icon-v2.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>..:: Wella ::..</title>
     <style>
@@ -13,7 +13,7 @@
   </head>
   <body>
     <a href="https://www.wella.com/">
-        <img src="/fav-icon-v2.png" alt="Wella - A.I Experience">
+        <img src="/wella/fav-icon-v2.png" alt="Wella - A.I Experience">
     </a>
     <script>
         const params = new URLSearchParams( window.location.search )
@@ -24,7 +24,7 @@
 
             const link = document.createElement('a')
             link.href = imageURL
-            link.download = 'Wella - AI Experience'
+            link.download = params.get( 'name' )
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
