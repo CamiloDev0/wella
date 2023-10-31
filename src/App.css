@@ -125,9 +125,9 @@ video {
 }
 
 .prompt-no-bottom{
-  bottom: 30% !important;
-  font-size: 15px !important;
-  height: 4% !important;
+  bottom: 52% !important;
+  font-size: 18px !important;
+  height: 1% !important;
 }
 
 .caret-prompt{
@@ -152,19 +152,19 @@ video {
 }
 
 .image-container{
-  width: 70%;
-  height: 100%;
+  width: 45%;
+  height: 91%;
   background: url('/marco.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  margin-top: -1%;
+  margin-top: 1%;
 }
 
 .image{
   width: 92%;
-  margin-left: 3.7%;
-  margin-top: 12%;
+  margin-left: 4.2%;
+  margin-top: 4%;
 }
 
 .image img{
